@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<GB_XBDM><!--NAME-->
+		<NAME>未知的性别</NAME><!--ID-->
+		<ID>0</ID>
+	</GB_XBDM>
+	<GB_XBDM><!--NAME-->
+		<NAME>男性</NAME><!--ID-->
+		<ID>1</ID>
+	</GB_XBDM>
+	<GB_XBDM><!--NAME-->
+		<NAME>女性</NAME><!--ID-->
+		<ID>2</ID>
+	</GB_XBDM>
+	<GB_XBDM><!--NAME-->
+		<NAME>未说明的性别</NAME><!--ID-->
+		<ID>9</ID>
+	</GB_XBDM>
+</Config>

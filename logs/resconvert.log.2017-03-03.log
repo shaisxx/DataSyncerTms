@@ -1,0 +1,52 @@
+2017-03-03 13:37:33,266  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-03 13:37:33,269  INFO com.shtd.datasyncer.worker.dky.CxcyWorker.work(CxcyWorker.java:23) - dky cxcy worker 工作开始，从webservice获取数据
+2017-03-03 13:37:33,420  WARN org.apache.axis.utils.JavaUtils.isAttachmentSupported(JavaUtils.java:1308) - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-03-03 13:37:33,489  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:75) - 由webservice拉取数据，用户名:twcytb, 服务号:twcy_rs
+2017-03-03 13:37:34,344  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:88) - 获取栏目名称成功。
+2017-03-03 13:37:34,418  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:97) - 获取数据数量成功，共 958 条数据。
+2017-03-03 13:37:35,318  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 0 条开始的   958  条数据
+2017-03-03 13:37:35,391  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:136) - 获取数据成功。
+2017-03-03 13:37:35,391  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:139) - 拉取数据完毕，将数据写入：d:/syncer/data/20170303133733/teacher_data.txt
+2017-03-03 13:37:35,411  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:142) - 数据写入本地文件 d:/syncer/data/20170303133733/teacher_data.txt 成功
+2017-03-03 13:37:35,411  INFO com.shtd.datasyncer.datagetter.dky.DataGetWorker.getData(DataGetWorker.java:54) - 教师数据获取成功，保存在 ：d:/syncer/data/20170303133733/teacher_data.txt
+2017-03-03 13:37:35,415  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:75) - 由webservice拉取数据，用户名:twcytb, 服务号:twcy_bj
+2017-03-03 13:37:35,548  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:88) - 获取栏目名称成功。
+2017-03-03 13:37:35,627  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:97) - 获取数据数量成功，共 1283 条数据。
+2017-03-03 13:37:36,676  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 0 条开始的   1283  条数据
+2017-03-03 13:37:36,776  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:136) - 获取数据成功。
+2017-03-03 13:37:36,777  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:139) - 拉取数据完毕，将数据写入：d:/syncer/data/20170303133733/clazz_data.txt
+2017-03-03 13:37:36,783  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:142) - 数据写入本地文件 d:/syncer/data/20170303133733/clazz_data.txt 成功
+2017-03-03 13:37:36,783  INFO com.shtd.datasyncer.datagetter.dky.DataGetWorker.getData(DataGetWorker.java:54) - 班级数据获取成功，保存在 ：d:/syncer/data/20170303133733/clazz_data.txt
+2017-03-03 13:37:36,785  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:75) - 由webservice拉取数据，用户名:twcytb, 服务号:twcy_xs
+2017-03-03 13:37:37,288  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:88) - 获取栏目名称成功。
+2017-03-03 13:37:37,395  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:97) - 获取数据数量成功，共 8245 条数据。
+2017-03-03 13:37:40,281  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 0 条开始的   2000  条数据
+2017-03-03 13:37:43,143  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 2000 条开始的   2000  条数据
+2017-03-03 13:37:49,260  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 4000 条开始的   2000  条数据
+2017-03-03 13:37:58,922  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 6000 条开始的   2000  条数据
+2017-03-03 13:38:12,375  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 8000 条开始的   245  条数据
+2017-03-03 13:38:14,387  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:136) - 获取数据成功。
+2017-03-03 13:38:14,387  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:139) - 拉取数据完毕，将数据写入：d:/syncer/data/20170303133733/student_data.txt
+2017-03-03 13:38:14,430  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:142) - 数据写入本地文件 d:/syncer/data/20170303133733/student_data.txt 成功
+2017-03-03 13:38:14,430  INFO com.shtd.datasyncer.datagetter.dky.DataGetWorker.getData(DataGetWorker.java:54) - 学生数据获取成功，保存在 ：d:/syncer/data/20170303133733/student_data.txt
+2017-03-03 13:38:14,430  INFO com.shtd.datasyncer.worker.dky.CxcyWorker.work(CxcyWorker.java:27) - 数据获取工作已完成
+2017-03-03 13:38:14,430  INFO com.shtd.datasyncer.worker.dky.CxcyWorker.work(CxcyWorker.java:37) - 开始解析数据文件
+2017-03-03 13:38:14,431  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:37) - 开始解析教师数据数据。
+2017-03-03 13:38:14,482  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:69) - 共读取 958 条 教师数据
+2017-03-03 13:38:14,489  INFO com.shtd.datasyncer.fileparser.dky.FileParseWorker.doParse(FileParseWorker.java:48) - 解析教师数据完毕
+2017-03-03 13:38:14,490  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:37) - 开始解析班级数据数据。
+2017-03-03 13:38:14,528  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:69) - 共读取 1283 条 班级数据
+2017-03-03 13:38:14,531  INFO com.shtd.datasyncer.fileparser.dky.FileParseWorker.doParse(FileParseWorker.java:55) - 解析班级数据完毕
+2017-03-03 13:38:14,532  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:37) - 开始解析学生数据数据。
+2017-03-03 13:38:14,671  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:69) - 共读取 8245 条 学生数据
+2017-03-03 13:38:14,671  INFO com.shtd.datasyncer.fileparser.dky.FileParseWorker.doParse(FileParseWorker.java:62) - 解析学生数据完毕
+2017-03-03 13:38:14,672  INFO com.shtd.datasyncer.worker.dky.CxcyWorker.work(CxcyWorker.java:44) - 解析数据文件完毕
+2017-03-03 13:38:14,672  INFO com.shtd.datasyncer.worker.dky.CxcyWorker.work(CxcyWorker.java:48) - 开始将数据保存到数据库
+2017-03-03 13:38:14,672  INFO com.shtd.datasyncer.dbsaver.dky.cxcy.DataSaveWorker.doSave(DataSaveWorker.java:64) - 将学院数据更新到数据库
+2017-03-03 13:38:14,674  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-03 13:38:14,685  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-03 13:38:15,711 ERROR com.shtd.datasyncer.dbsaver.dky.cxcy.CollegeDataSaver.doSave(CollegeDataSaver.java:98) - 将班级数据保存到数据库 操作失败: java.sql.SQLException: 获取DB连接（connection）失败
+2017-03-03 13:38:15,711  INFO com.shtd.datasyncer.dbsaver.dky.cxcy.DataSaveWorker.doSave(DataSaveWorker.java:68) - 学院数据更新到数据库失败
+2017-03-03 13:38:15,711  INFO com.shtd.datasyncer.worker.dky.CxcyWorker.work(CxcyWorker.java:55) - 将数据保存到数据库结束
+2017-03-03 13:38:15,711  INFO com.shtd.datasyncer.worker.dky.CxcyWorker.work(CxcyWorker.java:57) - dky cxcy worker 工作结束
+2017-03-03 13:38:15,711  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
