@@ -3,6 +3,8 @@ package com.shtd.datasyncer.worker.tms;
 import org.apache.log4j.Logger;
 
 import com.shtd.datasyncer.datagetter.tms.DataGetWorker;
+import com.shtd.datasyncer.dbsaver.tms.EmployeeDataSaver;
+import com.shtd.datasyncer.fileparser.tms.FileParseWorker;
 import com.shtd.datasyncer.utils.ConfigReader;
 import com.shtd.datasyncer.utils.Constant;
 import com.shtd.datasyncer.worker.IWorker;
@@ -21,7 +23,7 @@ public class TmsWorker implements IWorker{
 		logger.info("tms worker 工作开始，备份数据库表");
 		System.out.println("tms worker 工作开始，备份数据库表");
 		
-		DbTableBackUp.getDbTableBackUp().backup(); 
+		DbTableBack.getDbTableBackUp().backup(); 
 		
 		// 数据获取
 		logger.info("从数据库表获取数据");
@@ -38,25 +40,17 @@ public class TmsWorker implements IWorker{
 
 		// 数据解析
 		logger.info("开始解析数据文件");
-//		FileParseWorker parseWorker = new FileParseWorker();
-//		parseWorker.setTeacherFilePath(getWorker.getTeacherFilePath());
-//		parseWorker.setTeacherFilePath("D:/Workspaces/java_eclipse/DataSyncer/samp/dky/teacher_data_rwz.txt");
-//		parseWorker.setClazzFilePath(getWorker.getClazzFilePath());
-//		parseWorker.setClazzFilePath("D:/Workspaces/java_eclipse/DataSyncer/samp/dky/clazz_data_rwz.txt");
-//		parseWorker.setStudentFilePath(getWorker.getStudentFilePath());
-//		parseWorker.setStudentFilePath("D:/Workspaces/java_eclipse/DataSyncer/samp/dky/student_data_rwz.txt");
-//
-//		parseWorker.doParse();
+		FileParseWorker parseWorker = new FileParseWorker();
+		parseWorker.setEmployeeFilePath(getWorker.getEmployeeFilePath());
+
+		parseWorker.doParse();
 		logger.info("解析数据文件完毕");
 		
 		// 数据存储到db
 		logger.info("开始将数据保存到数据库");
-//		DataSaveWorker saveWorker = new DataSaveWorker();
-//		saveWorker.setClazzList(parseWorker.getClazzList());
-//		saveWorker.setStudentList(parseWorker.getStudentList());
-//		saveWorker.setTeacherList(parseWorker.getTeacherList());
-//		
-//		saveWorker.doSave();
+		EmployeeDataSaver saveWorker = new EmployeeDataSaver(parseWorker.getEmployeeList());
+		
+		saveWorker.doSave();
 		logger.info("将数据保存到数据库结束");
 		
 		logger.info("dky sizheng worker 工作结束");

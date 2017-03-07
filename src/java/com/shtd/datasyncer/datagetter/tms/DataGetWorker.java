@@ -8,16 +8,16 @@ import com.shtd.datasyncer.utils.Constant;
 public class DataGetWorker {
 	private static Logger logger = Logger.getLogger(Constant.LOGGER_NAME);
 
-	private static final String TEACHER_DATA_FILENAME = "teacher_data.txt";
+	private static final String TEACHER_DATA_FILENAME = "employee_data.txt";
 
-	private String mTeacherFilePathName = "";
+	private String mEmployeeFilePathName = "";
 	
-	public String getTeacherFilePath() {
-		return mTeacherFilePathName;
+	public String getEmployeeFilePath() {
+		return mEmployeeFilePathName;
 	}
 	
 	public void pullData() {
-		mTeacherFilePathName = getData("教师数据", new DataGetter(TEACHER_DATA_FILENAME));
+		mEmployeeFilePathName = getData("教师数据", new DataGetter(TEACHER_DATA_FILENAME));
 	}
 	
 	private String getData(String dataName, DataGetter getter) {

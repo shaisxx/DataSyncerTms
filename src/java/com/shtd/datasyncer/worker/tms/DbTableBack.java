@@ -10,14 +10,14 @@ import com.shtd.datasyncer.utils.ConfigReader;
 import com.shtd.datasyncer.utils.Constant;
 import com.shtd.datasyncer.utils.Utils;
 
-public class DbTableBackUp {
+public class DbTableBack {
 
 	private static Logger logger = Logger.getLogger(Constant.LOGGER_NAME);
 	
 	public static Map<String, String> backUpTableList = new ConcurrentHashMap<String, String>();
-	private static DbTableBackUp backObj = new DbTableBackUp();
+	private static DbTableBack backObj = new DbTableBack();
 
-	public static DbTableBackUp getDbTableBackUp() {
+	public static DbTableBack getDbTableBackUp() {
 		return backObj;
 	}
 

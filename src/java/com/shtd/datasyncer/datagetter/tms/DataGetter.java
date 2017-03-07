@@ -26,7 +26,7 @@ public class DataGetter {
 	private static final String SELECT_DATA_SQL = "SELECT "
 			+ "user_no, username, email, mobile, gender, post_title, "
 			+ "department, post_type, staff_type, post_level, teach_flag, "
-			+ "retire_flag, cert_flag, `status` " + "FROM sys_user_syncer ";
+			+ "retire_flag, cert_flag, `status` " + "FROM syncer_employee ";
 
 	// 返回数据 保存的txt文件名
 	protected String mFileName;
@@ -54,7 +54,7 @@ public class DataGetter {
 	// 查询数据表获取数据 并保存在本地
 	public boolean pullData() {
 		try {
-			logger.info("查询数据库表获取数据，数据库表名：sys_user_syncer");
+			logger.info("查询数据库表获取数据，数据库表名：syncer_employee");
 
 			Integer count = 0;
 
@@ -79,6 +79,7 @@ public class DataGetter {
 				if (writeToFile(mFilePathName, dataContentSb.toString())) {
 					logger.info("数据写入本地文件 " + mFilePathName + " 成功，数量：" + count);
 					System.out.println("数据写入本地文件 " + mFilePathName + " 成功，数量：" + count);
+					return true;
 				}
 
 				if (!flag) {
@@ -138,11 +139,12 @@ public class DataGetter {
 	// 将数据写入xml文件
 	private boolean writeToFile(String filePathName, String content) {
 		if (StringUtils.isBlank(filePathName) || StringUtils.isBlank(content)) {
-			logger.error("数据写入本地文件，传入文件路径：" + filePathName + ", 待写入内容："
-					+ content + ". 写入失败");
+			logger.error("数据写入本地文件，传入文件路径：" + filePathName + ", 待写入内容：" + content + ". 写入失败");
 			return false;
 		}
 
+		String tempContent = "user_no,username,email,mobile,gender,post_title,department,post_type,staff_type,post_level,teach_flag,retire_flag,cert_flag,status, \n" + content;	
+		
 		if (!mkPathFolders(filePathName)) {
 			logger.error("创建文件目录失败！");
 			return false;
@@ -160,7 +162,7 @@ public class DataGetter {
 
 			fos = new FileOutputStream(file);
 			osw = new OutputStreamWriter(fos, "UTF-8");
-			osw.write(content);
+			osw.write(tempContent);
 			osw.close();
 
 			return true;

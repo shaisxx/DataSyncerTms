@@ -1,0 +1,285 @@
+2017-03-05 11:03:15,792  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 11:03:15,797  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，从webservice获取数据
+2017-03-05 11:03:15,811  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:35) - 数据获取工作已完成
+2017-03-05 11:03:15,811  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:55) - 开始备份 sys_user_syncer
+2017-03-05 11:03:15,811  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:55) - 开始备份 test_edu_tch_employee
+2017-03-05 11:03:15,811  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:55) - 开始备份 test_sys_user
+2017-03-05 11:03:15,811  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:43) - 开始解析数据文件
+2017-03-05 11:03:15,815  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 解析数据文件完毕
+2017-03-05 11:03:15,815  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:56) - 开始将数据保存到数据库
+2017-03-05 11:03:15,815  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:63) - 将数据保存到数据库结束
+2017-03-05 11:03:15,816  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:65) - dky sizheng worker 工作结束
+2017-03-05 11:03:15,816  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 11:03:15,996  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:94) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305110315/test_sys_user.sql
+2017-03-05 11:03:16,005  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:94) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305110315/test_edu_tch_employee.sql
+2017-03-05 11:03:16,012  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:94) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305110315/sys_user_syncer.sql
+2017-03-05 21:37:56,885  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 21:37:56,911  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:23) - tms worker 工作开始，备份数据库表
+2017-03-05 21:37:56,920  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:29) - 从数据库表获取数据
+2017-03-05 21:37:56,920  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 21:37:56,921  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 21:37:56,920  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 21:37:57,962  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305213757/test_edu_tch_employee.sql
+2017-03-05 21:37:57,962  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305213757/sys_user_syncer.sql
+2017-03-05 21:37:58,038  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305213757/test_sys_user.sql
+2017-03-05 21:37:58,400  WARN org.apache.axis.utils.JavaUtils.isAttachmentSupported(JavaUtils.java:1308) - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-03-05 21:37:58,633  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:75) - 由webservice拉取数据，用户名:twcytb, 服务号:twcy_rs
+2017-03-05 21:37:59,440  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:88) - 获取栏目名称成功。
+2017-03-05 21:37:59,600  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:97) - 获取数据数量成功，共 958 条数据。
+2017-03-05 21:38:00,808  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 0 条开始的   958  条数据
+2017-03-05 21:38:00,923  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:136) - 获取数据成功。
+2017-03-05 21:38:00,923  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:139) - 拉取数据完毕，将数据写入：d:/syncer/data/20170305213757/teacher_data.txt
+2017-03-05 21:38:00,942  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:142) - 数据写入本地文件 d:/syncer/data/20170305213757/teacher_data.txt 成功
+2017-03-05 21:38:00,942  INFO com.shtd.datasyncer.datagetter.dky.DataGetWorker.getData(DataGetWorker.java:54) - 教师数据获取成功，保存在 ：d:/syncer/data/20170305213757/teacher_data.txt
+2017-03-05 21:38:00,945  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:75) - 由webservice拉取数据，用户名:twcytb, 服务号:twcy_bj
+2017-03-05 21:38:01,140  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:88) - 获取栏目名称成功。
+2017-03-05 21:38:01,308  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:97) - 获取数据数量成功，共 1283 条数据。
+2017-03-05 21:38:35,474  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 0 条开始的   1283  条数据
+2017-03-05 21:38:35,620  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:136) - 获取数据成功。
+2017-03-05 21:38:35,620  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:139) - 拉取数据完毕，将数据写入：d:/syncer/data/20170305213757/clazz_data.txt
+2017-03-05 21:38:35,622  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:142) - 数据写入本地文件 d:/syncer/data/20170305213757/clazz_data.txt 成功
+2017-03-05 21:38:35,622  INFO com.shtd.datasyncer.datagetter.dky.DataGetWorker.getData(DataGetWorker.java:54) - 班级数据获取成功，保存在 ：d:/syncer/data/20170305213757/clazz_data.txt
+2017-03-05 21:38:35,628  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:75) - 由webservice拉取数据，用户名:twcytb, 服务号:twcy_xs
+2017-03-05 21:38:36,180  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:88) - 获取栏目名称成功。
+2017-03-05 21:38:36,385  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:97) - 获取数据数量成功，共 8245 条数据。
+2017-03-05 21:39:00,238  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 0 条开始的   2000  条数据
+2017-03-05 21:39:05,785  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 2000 条开始的   2000  条数据
+2017-03-05 21:39:45,023  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 4000 条开始的   2000  条数据
+2017-03-05 21:40:38,769  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 21:40:38,773  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，备份数据库表
+2017-03-05 21:40:38,785  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:27) - 从数据库表获取数据
+2017-03-05 21:40:38,785  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 21:40:38,785  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 21:40:38,785  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 21:40:38,788  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:81) - 查询数据库表获取数据，数据库表名：sys_user_syncer
+2017-03-05 21:40:38,797  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 21:40:39,023  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305214038/test_edu_tch_employee.sql
+2017-03-05 21:40:39,024  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305214038/sys_user_syncer.sql
+2017-03-05 21:40:39,113  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 21:40:39,122  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305214038/test_sys_user.sql
+2017-03-05 21:40:39,165 ERROR com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:189) - 查询数据库表获取数据失败：java.lang.NullPointerException
+2017-03-05 21:40:39,165  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:32) - 数据获取工作已完成
+2017-03-05 21:40:39,165  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:40) - 开始解析数据文件
+2017-03-05 21:40:39,165  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:50) - 解析数据文件完毕
+2017-03-05 21:40:39,167  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 开始将数据保存到数据库
+2017-03-05 21:40:39,167  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:60) - 将数据保存到数据库结束
+2017-03-05 21:40:39,167  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - dky sizheng worker 工作结束
+2017-03-05 21:40:39,167  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 21:41:16,598  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 6000 条开始的   2000  条数据
+2017-03-05 21:41:43,969  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:121) - 获取从第 8000 条开始的   245  条数据
+2017-03-05 21:41:46,633  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:136) - 获取数据成功。
+2017-03-05 21:41:46,633  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:139) - 拉取数据完毕，将数据写入：d:/syncer/data/20170305213757/student_data.txt
+2017-03-05 21:41:46,647  INFO com.shtd.datasyncer.datagetter.dky.DataGetter.pullData(DataGetter.java:142) - 数据写入本地文件 d:/syncer/data/20170305213757/student_data.txt 成功
+2017-03-05 21:41:46,647  INFO com.shtd.datasyncer.datagetter.dky.DataGetWorker.getData(DataGetWorker.java:54) - 学生数据获取成功，保存在 ：d:/syncer/data/20170305213757/student_data.txt
+2017-03-05 21:41:46,648  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:34) - 数据获取工作已完成
+2017-03-05 21:41:46,648  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:42) - 开始解析数据文件
+2017-03-05 21:41:46,682  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:37) - 开始解析教师数据数据。
+2017-03-05 21:41:46,693  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:46) - 文件异常，请检查：D:/Workspaces/java_eclipse/DataSyncer/samp/dky/teacher_data_rwz.txt 文件。
+2017-03-05 21:41:46,693  INFO com.shtd.datasyncer.fileparser.dky.FileParseWorker.doParse(FileParseWorker.java:48) - 解析教师数据完毕
+2017-03-05 21:41:46,694  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:37) - 开始解析班级数据数据。
+2017-03-05 21:41:46,694  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:46) - 文件异常，请检查：D:/Workspaces/java_eclipse/DataSyncer/samp/dky/clazz_data_rwz.txt 文件。
+2017-03-05 21:41:46,694  INFO com.shtd.datasyncer.fileparser.dky.FileParseWorker.doParse(FileParseWorker.java:55) - 解析班级数据完毕
+2017-03-05 21:41:46,695  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:37) - 开始解析学生数据数据。
+2017-03-05 21:41:46,695  INFO com.shtd.datasyncer.fileparser.dky.BaseFileParser.doParse(BaseFileParser.java:46) - 文件异常，请检查：D:/Workspaces/java_eclipse/DataSyncer/samp/dky/student_data_rwz.txt 文件。
+2017-03-05 21:41:46,695  INFO com.shtd.datasyncer.fileparser.dky.FileParseWorker.doParse(FileParseWorker.java:62) - 解析学生数据完毕
+2017-03-05 21:41:46,695  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:52) - 解析数据文件完毕
+2017-03-05 21:41:46,695  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:55) - 开始将数据保存到数据库
+2017-03-05 21:41:46,696  INFO com.shtd.datasyncer.dbsaver.dky.cxcy.DataSaveWorker.doSave(DataSaveWorker.java:64) - 将学院数据更新到数据库
+2017-03-05 21:41:46,706 ERROR com.shtd.datasyncer.dbsaver.dky.cxcy.CollegeDataSaver.doSave(CollegeDataSaver.java:57) - 不存在待保存数据，操作结束
+2017-03-05 21:41:46,706  INFO com.shtd.datasyncer.dbsaver.dky.cxcy.DataSaveWorker.doSave(DataSaveWorker.java:73) - 将老师数据更新到数据库
+2017-03-05 21:41:46,793 ERROR com.shtd.datasyncer.dbsaver.dky.cxcy.TeacherDataSaver.doSave(TeacherDataSaver.java:127) - 不存在待保存数据，操作结束
+2017-03-05 21:41:46,793  INFO com.shtd.datasyncer.dbsaver.dky.cxcy.DataSaveWorker.doSave(DataSaveWorker.java:82) - 将班级数据更新到数据库
+2017-03-05 21:41:46,917 ERROR com.shtd.datasyncer.dbsaver.dky.cxcy.SquadDataSaver.doSave(SquadDataSaver.java:91) - 不存在待保存数据，操作结束
+2017-03-05 21:41:46,918  INFO com.shtd.datasyncer.dbsaver.dky.cxcy.DataSaveWorker.doSave(DataSaveWorker.java:91) - 将学生数据更新到数据库
+2017-03-05 21:41:47,018 ERROR com.shtd.datasyncer.dbsaver.dky.cxcy.StudentDataSaver.doSave(StudentDataSaver.java:133) - 不存在待保存数据，操作结束
+2017-03-05 21:41:47,018  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - 将数据保存到数据库结束
+2017-03-05 21:41:47,018  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:64) - dky sizheng worker 工作结束
+2017-03-05 21:41:47,018  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 21:42:35,848  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 21:42:35,852  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，备份数据库表
+2017-03-05 21:42:35,868  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:27) - 从数据库表获取数据
+2017-03-05 21:42:35,869  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 21:42:35,872  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 21:42:35,872  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 21:42:47,091  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305214235/sys_user_syncer.sql
+2017-03-05 21:42:51,211  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:81) - 查询数据库表获取数据，数据库表名：sys_user_syncer
+2017-03-05 21:43:05,989  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 21:43:06,008  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 21:43:12,084 ERROR com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:189) - 查询数据库表获取数据失败：java.lang.NullPointerException
+2017-03-05 21:43:12,084  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:32) - 数据获取工作已完成
+2017-03-05 21:43:12,085  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:40) - 开始解析数据文件
+2017-03-05 21:43:12,085  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:50) - 解析数据文件完毕
+2017-03-05 21:43:12,085  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 开始将数据保存到数据库
+2017-03-05 21:43:12,085  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:60) - 将数据保存到数据库结束
+2017-03-05 21:43:12,088  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - dky sizheng worker 工作结束
+2017-03-05 21:43:12,088  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 21:43:18,182  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305214235/test_sys_user.sql
+2017-03-05 21:43:20,054  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305214235/test_edu_tch_employee.sql
+2017-03-05 21:44:27,676  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 21:44:27,683  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，备份数据库表
+2017-03-05 21:44:27,699  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:27) - 从数据库表获取数据
+2017-03-05 21:44:27,700  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 21:44:27,707  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 21:44:27,707  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 21:44:30,370  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305214427/test_edu_tch_employee.sql
+2017-03-05 21:44:35,349  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305214427/sys_user_syncer.sql
+2017-03-05 21:44:40,585  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:81) - 查询数据库表获取数据，数据库表名：sys_user_syncer
+2017-03-05 21:44:59,400  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 21:44:59,419  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 21:45:23,329 ERROR com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:189) - 查询数据库表获取数据失败：java.lang.NullPointerException
+2017-03-05 21:45:23,330  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:32) - 数据获取工作已完成
+2017-03-05 21:45:23,330  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:40) - 开始解析数据文件
+2017-03-05 21:45:23,330  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:50) - 解析数据文件完毕
+2017-03-05 21:45:23,330  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 开始将数据保存到数据库
+2017-03-05 21:45:23,333  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:60) - 将数据保存到数据库结束
+2017-03-05 21:45:23,333  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - dky sizheng worker 工作结束
+2017-03-05 21:45:23,333  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 21:45:28,976  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305214427/test_sys_user.sql
+2017-03-05 21:48:03,625  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 21:48:03,630  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，备份数据库表
+2017-03-05 21:48:03,643  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:27) - 从数据库表获取数据
+2017-03-05 21:48:03,644  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 21:48:03,646  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 21:48:03,647  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 21:48:03,912  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305214803/test_sys_user.sql
+2017-03-05 21:48:03,915  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305214803/test_edu_tch_employee.sql
+2017-03-05 21:48:03,919  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305214803/sys_user_syncer.sql
+2017-03-05 21:48:09,497  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:81) - 查询数据库表获取数据，数据库表名：sys_user_syncer
+2017-03-05 21:48:20,024  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 21:48:20,047  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 21:49:23,840  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 21:49:23,841  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 21:50:08,265  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 21:50:08,265  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 21:50:09,024  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 21:50:09,025  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 21:50:09,720  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:141) - 获取数据成功。
+2017-03-05 21:50:09,721  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:144) - 拉取数据完毕，将数据写入：d:/syncer/data/20170305214808/teacher_data.txt
+2017-03-05 21:50:09,754  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:147) - 数据写入本地文件 d:/syncer/data/20170305214808/teacher_data.txt 成功
+2017-03-05 21:50:09,755  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:150) - 数据写入本地文件 d:/syncer/data/20170305214808/teacher_data.txt 失败，数据内容为：
+0
+2017-03-05 21:50:09,755  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:32) - 数据获取工作已完成
+2017-03-05 21:50:09,755  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:40) - 开始解析数据文件
+2017-03-05 21:50:09,755  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:50) - 解析数据文件完毕
+2017-03-05 21:50:09,755  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 开始将数据保存到数据库
+2017-03-05 21:50:09,755  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:60) - 将数据保存到数据库结束
+2017-03-05 21:50:09,755  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - dky sizheng worker 工作结束
+2017-03-05 21:50:09,756  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 22:00:26,113  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 22:00:26,118  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，备份数据库表
+2017-03-05 22:00:26,129  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:27) - 从数据库表获取数据
+2017-03-05 22:00:26,129  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 22:00:26,129  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 22:00:26,129  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 22:00:26,131  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:60) - 查询数据库表获取数据，数据库表名：sys_user_syncer
+2017-03-05 22:00:26,133  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:00:26,148  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:00:26,379  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305220026/test_edu_tch_employee.sql
+2017-03-05 22:00:26,397  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305220026/test_sys_user.sql
+2017-03-05 22:00:26,404  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305220026/sys_user_syncer.sql
+2017-03-05 22:00:26,566  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:00:26,628  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:00:26,639  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:00:26,640  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:00:26,652  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:00:26,652  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:00:26,666  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:77) - 获取数据成功。
+2017-03-05 22:00:26,667  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:80) - 获取数据完毕，将数据写入：d:/syncer/data/20170305220026/teacher_data.txt
+2017-03-05 22:00:26,694  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:83) - 数据写入本地文件 d:/syncer/data/20170305220026/teacher_data.txt 成功
+2017-03-05 22:00:26,695  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:86) - 数据写入本地文件 d:/syncer/data/20170305220026/teacher_data.txt 失败，数据内容为：
+123
+2017-03-05 22:00:26,695  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:32) - 数据获取工作已完成
+2017-03-05 22:00:26,695  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:40) - 开始解析数据文件
+2017-03-05 22:00:26,695  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:50) - 解析数据文件完毕
+2017-03-05 22:00:26,695  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 开始将数据保存到数据库
+2017-03-05 22:00:26,695  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:60) - 将数据保存到数据库结束
+2017-03-05 22:00:26,695  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - dky sizheng worker 工作结束
+2017-03-05 22:00:26,696  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 22:01:06,933  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 22:01:06,939  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，备份数据库表
+2017-03-05 22:01:06,960  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:27) - 从数据库表获取数据
+2017-03-05 22:01:06,965  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:60) - 查询数据库表获取数据，数据库表名：sys_user_syncer
+2017-03-05 22:01:06,969  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 22:01:06,971  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 22:01:06,971  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:01:06,970  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 22:01:07,000  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:01:07,370  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305220106/test_sys_user.sql
+2017-03-05 22:01:07,373  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305220106/sys_user_syncer.sql
+2017-03-05 22:01:07,381  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305220106/test_edu_tch_employee.sql
+2017-03-05 22:01:07,394  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:01:07,394  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:01:07,408  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:01:07,408  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:01:07,421  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:01:07,421  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:01:07,436  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:77) - 获取数据成功。
+2017-03-05 22:01:07,436  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:80) - 获取数据完毕，将数据写入：d:/syncer/data/20170305220106/teacher_data.txt
+2017-03-05 22:01:07,438  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:83) - 数据写入本地文件 d:/syncer/data/20170305220106/teacher_data.txt 成功
+2017-03-05 22:01:07,438  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:86) - 数据写入本地文件 d:/syncer/data/20170305220106/teacher_data.txt 失败，数据内容为：
+123
+2017-03-05 22:01:07,438  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:32) - 数据获取工作已完成
+2017-03-05 22:01:07,439  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:40) - 开始解析数据文件
+2017-03-05 22:01:07,439  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:50) - 解析数据文件完毕
+2017-03-05 22:01:07,439  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 开始将数据保存到数据库
+2017-03-05 22:01:07,439  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:60) - 将数据保存到数据库结束
+2017-03-05 22:01:07,439  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - dky sizheng worker 工作结束
+2017-03-05 22:01:07,439  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 22:02:57,399  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 22:02:57,409  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，备份数据库表
+2017-03-05 22:02:57,422  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:27) - 从数据库表获取数据
+2017-03-05 22:02:57,423  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 22:02:57,428  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:57) - 查询数据库表获取数据，数据库表名：sys_user_syncer
+2017-03-05 22:02:57,430  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 22:02:57,428  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 22:02:57,434  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:02:57,450  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:02:58,606  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305220257/sys_user_syncer.sql
+2017-03-05 22:02:58,608  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305220257/test_edu_tch_employee.sql
+2017-03-05 22:02:58,887  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:02:58,888  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:02:58,891  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305220257/test_sys_user.sql
+2017-03-05 22:02:58,900  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:02:58,900  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:02:58,913  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:02:58,913  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:02:58,923  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:74) - 获取数据成功。
+2017-03-05 22:02:58,924  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:77) - 获取数据完毕，将数据写入：d:/syncer/data/20170305220257/teacher_data.txt
+2017-03-05 22:02:58,993  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:80) - 数据写入本地文件 d:/syncer/data/20170305220257/teacher_data.txt 成功
+2017-03-05 22:02:58,993  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:84) - 数据写入本地文件 d:/syncer/data/20170305220257/teacher_data.txt 失败，数据内容为：
+123
+2017-03-05 22:02:58,993  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:32) - 数据获取工作已完成
+2017-03-05 22:02:58,993  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:40) - 开始解析数据文件
+2017-03-05 22:02:58,994  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:50) - 解析数据文件完毕
+2017-03-05 22:02:58,994  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 开始将数据保存到数据库
+2017-03-05 22:02:58,994  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:60) - 将数据保存到数据库结束
+2017-03-05 22:02:58,994  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - dky sizheng worker 工作结束
+2017-03-05 22:02:58,994  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
+2017-03-05 22:05:40,977  INFO com.shtd.datasyncer.Main.main(Main.java:17) - 同步程序启动
+2017-03-05 22:05:40,982  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:21) - tms worker 工作开始，备份数据库表
+2017-03-05 22:05:41,003  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:27) - 从数据库表获取数据
+2017-03-05 22:05:41,005  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 sys_user_syncer
+2017-03-05 22:05:41,006  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_edu_tch_employee
+2017-03-05 22:05:41,007  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:57) - 查询数据库表获取数据，数据库表名：sys_user_syncer
+2017-03-05 22:05:41,008  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:49) - 开始备份 test_sys_user
+2017-03-05 22:05:41,012  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:05:41,024  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:05:41,306  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - sys_user_syncer 备份完毕，将数据写入：d:/syncer/back/20170305220541/sys_user_syncer.sql
+2017-03-05 22:05:41,364  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:05:41,365  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:05:41,370  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_sys_user 备份完毕，将数据写入：d:/syncer/back/20170305220541/test_sys_user.sql
+2017-03-05 22:05:41,371  INFO com.shtd.datasyncer.worker.tms.DbTableBackUp$DbBackUpThread.run(DbTableBackUp.java:88) - test_edu_tch_employee 备份完毕，将数据写入：d:/syncer/back/20170305220541/test_edu_tch_employee.sql
+2017-03-05 22:05:41,380  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:05:41,380  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:05:41,396  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:55) - 尝试获取DB驱动
+2017-03-05 22:05:41,397  INFO com.shtd.datasyncer.utils.db.DbBase.initConn(DbBase.java:57) - 获取DB驱动成功
+2017-03-05 22:05:41,411  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:74) - 获取数据成功。
+2017-03-05 22:05:41,411  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:77) - 获取数据完毕，将数据写入：d:/syncer/data/20170305220541/teacher_data.txt
+2017-03-05 22:05:41,415  INFO com.shtd.datasyncer.datagetter.tms.DataGetter.pullData(DataGetter.java:80) - 数据写入本地文件 d:/syncer/data/20170305220541/teacher_data.txt 成功，数量：123
+2017-03-05 22:05:41,415  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:32) - 数据获取工作已完成
+2017-03-05 22:05:41,415  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:40) - 开始解析数据文件
+2017-03-05 22:05:41,415  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:50) - 解析数据文件完毕
+2017-03-05 22:05:41,415  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:53) - 开始将数据保存到数据库
+2017-03-05 22:05:41,415  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:60) - 将数据保存到数据库结束
+2017-03-05 22:05:41,415  INFO com.shtd.datasyncer.worker.tms.TmsWorker.work(TmsWorker.java:62) - dky sizheng worker 工作结束
+2017-03-05 22:05:41,416  INFO com.shtd.datasyncer.Main.main(Main.java:28) - 同步程序结束
