@@ -21,18 +21,15 @@ public class TmsWorker implements IWorker{
 		
 		// 数据表备份
 		logger.info("tms worker 工作开始，备份数据库表");
-		System.out.println("tms worker 工作开始，备份数据库表");
 		
 		DbTableBack.getDbTableBackUp().backup(); 
 		
 		// 数据获取
-		logger.info("从数据库表获取数据");
-		System.out.println("从数据库表获取数据");	
+		logger.info("从数据库表syncer_employee获取数据");
 		DataGetWorker getWorker = new DataGetWorker();
 		getWorker.pullData();
 		
 		logger.info("数据获取工作已完成");
-		System.out.println("数据获取工作已完成");
 		if ((Constant.INT_TRUE+"").equals(ConfigReader.getInstance().getValue("GET_DATA_ONLY"))) {
 			logger.info("当前配置为只获取数据并存储到本地，tms worker 工作结束。");
 			return;
@@ -53,6 +50,6 @@ public class TmsWorker implements IWorker{
 		saveWorker.doSave();
 		logger.info("将数据保存到数据库结束");
 		
-		logger.info("dky sizheng worker 工作结束");
+		logger.info("tms worker 工作结束");
 	}
 }

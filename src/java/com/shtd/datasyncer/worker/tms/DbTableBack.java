@@ -22,71 +22,69 @@ public class DbTableBack {
 	}
 
 	public void backup() {
-		String tableNames = ConfigReader.getInstance().getValue("tableNames");
-		if(StringUtils.isNotBlank(tableNames)){
-			String[] tableArr = tableNames.split(",");
-			for(String tableName:tableArr){
-				if (null != backUpTableList.get(tableName))return;
-				backUpTableList.put(tableName, tableName); // 标记已经用于备份
-				new Thread(new DbBackUpThread(tableName)).start();
-			}
+		String syncerTableNames = ConfigReader.getInstance().getValue("SYNCER_DB_BACKUP_TABLE_NAMES");
+		if(StringUtils.isNotBlank(syncerTableNames)){
+			String username = ConfigReader.getInstance().getValue("SYNCER_DB_USER");
+			String password = ConfigReader.getInstance().getValue("SYNCER_DB_PASSWD");
+			String mysqlpaths = ConfigReader.getInstance().getValue("SYNCER_DB_PATH");
+			String address = ConfigReader.getInstance().getValue("SYNCER_DB_IP");
+			String databaseName = ConfigReader.getInstance().getValue("SYNCER_DB_NAME");
+			backUpTables(syncerTableNames, username, password, mysqlpaths, address, databaseName);
 		}
+		
+		String dbTableNames = ConfigReader.getInstance().getValue("MYSQL_DB_BACKUP_TABLE_NAMES");
+		if(StringUtils.isNotBlank(dbTableNames)){
+			String username = ConfigReader.getInstance().getValue("MYSQL_DB_USER");
+			String password = ConfigReader.getInstance().getValue("MYSQL_DB_PASSWD");
+			String mysqlpaths = ConfigReader.getInstance().getValue("MYSQL_DB_PATH");
+			String address = ConfigReader.getInstance().getValue("MYSQL_DB_IP");
+			String databaseName = ConfigReader.getInstance().getValue("MYSQL_DB_NAME");
+			backUpTables(dbTableNames, username, password, mysqlpaths, address, databaseName);
+		}
+
 	}
 	
-	/**
-	 * 用于执行某表的备份
-	 */
-	class DbBackUpThread implements Runnable {
-		String tableName = null;
-
-		public DbBackUpThread(String tableName) {
-			this.tableName = tableName;
-		}
-
-		@Override
-		public void run() {
+	private void backUpTables(String backupTableNames,String dbUser,String dbPassword,
+			String dbPaths,String dbAddress,String dbName){
+		
+		String[] tableArr = backupTableNames.split(",");
+		for(String tableName:tableArr){
+			if (null != backUpTableList.get(tableName))return;
+			logger.info("开始备份 " + tableName);
 			try {
-				logger.info("开始备份 " + tableName);
-				System.out.println("开始备份 " + tableName);
-
-				String username = ConfigReader.getInstance().getValue("username");
-				String password = ConfigReader.getInstance().getValue("password");
-				String mysqlpaths = ConfigReader.getInstance().getValue("mysqlpath");
-				String address = ConfigReader.getInstance().getValue("dbAddress");
-				String databaseName = ConfigReader.getInstance().getValue("databaseName");
-				String sqlpathName = Utils.getBackFilePathName(tableName);
 				
-				if(!Utils.mkPathFolders(sqlpathName)){
+				String dbSqlPathName = Utils.getBackFilePathName(tableName);
+				
+				if(!Utils.mkPathFolders(dbSqlPathName)){
 					logger.error("创建文件目录失败！");
 					return;
 				}
 
 				StringBuffer sb = new StringBuffer();
-				sb.append(mysqlpaths);
+				sb.append(dbPaths);
 				sb.append("mysqldump ");
 				sb.append("--opt ");
 				sb.append("-h ");
-				sb.append(address);
+				sb.append(dbAddress);
 				sb.append(" ");
 				sb.append("--user=");
-				sb.append(username);
+				sb.append(dbUser);
 				sb.append(" ");
 				sb.append("--password=");
-				sb.append(password);
+				sb.append(dbPassword);
 				sb.append(" ");
 				sb.append("--lock-all-tables=true ");
 				sb.append("--result-file=");
-				sb.append(sqlpathName + ".sql");
+				sb.append(dbSqlPathName + ".sql");
 				sb.append(" ");
 				sb.append("--default-character-set=utf8 ");
-				sb.append(databaseName);
+				sb.append(dbName);
 				sb.append(" "); 
 				sb.append(tableName);
 				Runtime cmd = Runtime.getRuntime();
 				Process p = cmd.exec(sb.toString());
 				p.waitFor(); // 该语句用于标记，如果备份没有完成，则该线程持续等待
-				logger.info(tableName + " 备份完毕，将数据写入：" + sqlpathName + ".sql");
-				System.out.println(tableName + " 备份完毕，将数据写入：" + sqlpathName + ".sql");
+				logger.info(tableName + " 备份完毕，将数据写入：" + dbSqlPathName + ".sql");
 			} catch (Exception e) {
 				logger.error("备份操作出现问题", e);
 			} finally {

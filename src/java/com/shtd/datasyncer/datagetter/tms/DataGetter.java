@@ -53,9 +53,17 @@ public class DataGetter {
 
 	// 查询数据表获取数据 并保存在本地
 	public boolean pullData() {
+		MysqlDb db = new MysqlDb();
+		Connection dbConn = null;
+		
 		try {
 			logger.info("查询数据库表获取数据，数据库表名：syncer_employee");
-
+			db.initConn();
+			dbConn = db.getConn();
+			if (dbConn == null) {
+				logger.error("未获取有效数据库连接，操作失败");
+			}
+				
 			Integer count = 0;
 
 			// 设置标记
@@ -65,7 +73,7 @@ public class DataGetter {
 				StringBuffer dataContentSb = new StringBuffer();
 				for (int i = j; i < j + 4; i++) {
 					int h = i * 500;
-					Integer dataCount = getDataContent(dataContentSb, h, 500);
+					Integer dataCount = getDataContent(dbConn, dataContentSb, h, 500);
 					count += dataCount;
 					if (dataCount < 500) {
 						flag = false;
@@ -74,11 +82,10 @@ public class DataGetter {
 				logger.info("获取数据成功。");
 
 				mFilePathName = getFilePathName(mFileName);
-				logger.info("获取数据完毕，将数据写入：" + mFilePathName);
+				logger.info("获取数据完毕");
 
 				if (writeToFile(mFilePathName, dataContentSb.toString())) {
 					logger.info("数据写入本地文件 " + mFilePathName + " 成功，数量：" + count);
-					System.out.println("数据写入本地文件 " + mFilePathName + " 成功，数量：" + count);
 					return true;
 				}
 
@@ -87,11 +94,18 @@ public class DataGetter {
 				}
 			}
 
-		} catch (Exception e) {
-			logger.error("查询数据库表获取数据失败：" + e);
+			dbConn.commit();// 事务提交
+			dbConn.close();
+		} catch (SQLException e) {
+			try {
+				dbConn.rollback();
+				logger.error("操作失败，数据库回滚");
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
-		}
 
+		}
 		return false;
 	}
 
@@ -191,20 +205,9 @@ public class DataGetter {
 		return false;
 	}
 
-	public Integer getDataContent(StringBuffer dataContentSb, int start,
-			int end) {
-
-		MysqlDb db = new MysqlDb();
-		Connection dbConn = null;
+	public Integer getDataContent(Connection dbConn, StringBuffer dataContentSb, int start, int end) {
 		Integer dataCount = 0;
 		try {
-			db.initConn();
-			dbConn = db.getConn();
-
-			if (dbConn == null) {
-				logger.error("未获取有效数据库连接，操作失败");
-			}
-
 			dbConn.setAutoCommit(false);
 
 			Statement stm = dbConn.createStatement();
@@ -229,17 +232,10 @@ public class DataGetter {
 				dataCount++;
 			}
 
-			dbConn.commit();// 事务提交
-			dbConn.close();
+//			dbConn.commit();// 事务提交
+//			dbConn.close();
 		} catch (SQLException e) {
-			try {
-				dbConn.rollback();
-				logger.error("操作失败，数据库回滚");
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-			e.printStackTrace();
-
+			logger.error(e);
 		}
 		return dataCount;
 	}

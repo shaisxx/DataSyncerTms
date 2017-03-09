@@ -27,6 +27,6 @@ public class FileParseWorker {
 		if (tparser.doParse()) {
 			mEmployeeList = tparser.getEmployeeList();
 		}
-		logger.info("解析教师数据完毕");
+		logger.info("解析教职工数据完毕");
 	}
 }

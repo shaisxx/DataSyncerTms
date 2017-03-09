@@ -15,5 +15,7 @@
 	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="lib" path="libs/pinyin4j-2.5.0.jar"/>
 	<classpathentry kind="lib" path="libs/jtds-1.2.5.jar"/>
+	<classpathentry kind="lib" path="libs/javax.mail.jar"/>
+	<classpathentry kind="lib" path="libs/jasypt-1.9.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

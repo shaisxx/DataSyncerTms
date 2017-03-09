@@ -66,7 +66,7 @@ public class BaseFileParser {
 			}
 			reader.close();
 			
-			logger.info("共读取 " + getDataCount() + " 条 " + mDataName);
+			logger.info("共读取 " + getDataCount() + " 条 " + mDataName + "数据");
 	        
 	        // 文件处理结束，将文件改名
 	        try {

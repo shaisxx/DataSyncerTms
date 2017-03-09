@@ -52,11 +52,19 @@ public class Employee implements Serializable {
     
     private String postTitle;
     
+    private Integer departmentId;
+    
     private String department;
+    
+    private Integer postTypeId;
     
     private String postType;
     
+    private Integer staffTypeId;
+    
     private String staffType;
+    
+    private Integer postLevelId;
     
     private String postLevel;
     
@@ -132,6 +140,38 @@ public class Employee implements Serializable {
 		this.postTitle = postTitle;
 	}
 
+	public Integer getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
+	}
+
+	public Integer getPostTypeId() {
+		return postTypeId;
+	}
+
+	public void setPostTypeId(Integer postTypeId) {
+		this.postTypeId = postTypeId;
+	}
+
+	public Integer getStaffTypeId() {
+		return staffTypeId;
+	}
+
+	public void setStaffTypeId(Integer staffTypeId) {
+		this.staffTypeId = staffTypeId;
+	}
+
+	public Integer getPostLevelId() {
+		return postLevelId;
+	}
+
+	public void setPostLevelId(Integer postLevelId) {
+		this.postLevelId = postLevelId;
+	}
+
 	public String getDepartment() {
 		return department;
 	}
@@ -198,7 +238,7 @@ public class Employee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Employee [userNo=" + userNo + ", username=" + username
+		return " [userNo=" + userNo + ", username=" + username
 				+ ", email=" + email + ", mobile=" + mobile + ", gender="
 				+ gender + ", postTitle=" + postTitle + ", department="
 				+ department + ", postType=" + postType + ", staffType="

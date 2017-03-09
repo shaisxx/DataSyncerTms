@@ -17,14 +17,13 @@ public class DataGetWorker {
 	}
 	
 	public void pullData() {
-		mEmployeeFilePathName = getData("教师数据", new DataGetter(TEACHER_DATA_FILENAME));
+		mEmployeeFilePathName = getData("教职工数据", new DataGetter(TEACHER_DATA_FILENAME));
 	}
 	
 	private String getData(String dataName, DataGetter getter) {
 		String filePathName = "";
 		if (getter.pullData()) {
 			filePathName = getter.getFilePathName();
-			logger.info(dataName + "获取成功，保存在 ：" + filePathName);
 		}
 		return filePathName;
 	}

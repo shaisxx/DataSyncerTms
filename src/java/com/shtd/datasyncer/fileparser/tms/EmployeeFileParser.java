@@ -19,7 +19,7 @@ public class EmployeeFileParser extends BaseFileParser {
 	public EmployeeFileParser(String filePathName) {
 		super(filePathName);
 		
-		setDataName("教师数据");
+		setDataName("教职工");
 	}
 	
 	public List<Employee> getEmployeeList() {
