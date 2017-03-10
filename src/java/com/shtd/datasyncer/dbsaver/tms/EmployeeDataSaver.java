@@ -144,7 +144,7 @@ public class EmployeeDataSaver {
 	
 
 	// 将只在tmp_employee中存在的数据全部插入 sys_user
-	private static final String SQL_INSERT_SYS_USER = " INSERT INTO sys_user(user_no,username,email,mobile) VALUE(?,?,?,?)";
+	private static final String SQL_INSERT_SYS_USER = "INSERT INTO sys_user(user_no,username,email,mobile) VALUE(?,?,?,?)";
 	
 	// 将只在tmp_employee中存在的数据全部插入 edu_tch_employee
 	private static final String SQL_INSERT_EDU_TCH_EMPLOYEE = " INSERT INTO edu_tch_employee ( " +
@@ -526,6 +526,7 @@ public class EmployeeDataSaver {
 			dbConn.commit();
 		} catch (Exception e) {
 			logger.error("将教职工数据保存到数据库，操作失败，数据库回滚 : " + e);
+			SendEmail.Send("将教职工数据保存到数据库，操作失败，数据库回滚 : " + e);
 			if(dbConn != null){
 				dbConn.rollback();
 			}
