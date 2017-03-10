@@ -1,14 +1,16 @@
 package com.shtd.datasyncer.utils;
 
+import java.util.Date;
+import java.util.Properties;
+
+import javax.mail.Address;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-
-import java.util.Date;
-import java.util.Properties;
 
 public class SendEmail {
 
@@ -23,7 +25,7 @@ public class SendEmail {
 			String sendMail = ConfigReader.getInstance().getValue("email.sender.user");
 			String sendMailUserName = ConfigReader.getInstance().getValue("email.sender.username");
 			String sendMailPassword = EncryptionUtil.decrypt(ConfigReader.getInstance().getValue("email.sender.password"));
-			String receiveMail = ConfigReader.getInstance().getValue("email.receive.user");
+			String receiveMails = ConfigReader.getInstance().getValue("email.receive.user");
 			String subject = ConfigReader.getInstance().getValue("email.sender.subject");
 
 			// 1. 创建参数配置, 用于连接邮件服务器的参数配置
@@ -38,7 +40,7 @@ public class SendEmail {
 			session.setDebug(false); // 设置为debug模式, 可以查看详细的发送 log
 
 			// 3. 创建一封邮件
-			MimeMessage message = createMimeMessage(session, sendMail, sendMailUserName, receiveMail, subject, msgContent);
+			MimeMessage message = createMimeMessage(session, sendMail, sendMailUserName, receiveMails, subject, msgContent);
 
 			// 4. 根据 Session 获取邮件传输对象
 			Transport transport = session.getTransport();
@@ -73,7 +75,7 @@ public class SendEmail {
 	 * @author Josh
 	 */
 	public static MimeMessage createMimeMessage(Session session,
-			String sendMail, String sendUserName, String receiveMail,
+			String sendMail, String sendUserName, String receiveMails,
 			String subject, String msgContent) throws Exception {
 		
 		// 1. 创建一封邮件
@@ -83,7 +85,14 @@ public class SendEmail {
 		message.setFrom(new InternetAddress(sendMail, sendUserName, UTF8));
 
 		// 3. To: 收件人（可以增加多个收件人、抄送、密送）
-		message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail, "", UTF8));
+		if(StringUtils.isNotBlank(receiveMails)){
+			String[] receiverMailArr = receiveMails.split(",");
+			Address[] receiverMailAddress = new InternetAddress[receiverMailArr.length];
+			for(int i = 0;i < receiverMailArr.length; i ++){
+				receiverMailAddress[i] = new InternetAddress(receiverMailArr[i]);
+			}
+			message.setRecipients(MimeMessage.RecipientType.TO, receiverMailAddress);
+		}
 
 		// 4. Subject: 邮件主题
 		message.setSubject(subject, UTF8);

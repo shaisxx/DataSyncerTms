@@ -3,6 +3,7 @@ package com.shtd.datasyncer.utils;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -23,7 +24,7 @@ public class Utils {
 	/**
      * 逐层创建文件夹
      * @param path 文件路径
-     * 
+     * @author Josh
      */
     public static boolean mkPathFolders(String filePath) {
         String paths[] = filePath.split("/");
@@ -52,5 +53,10 @@ public class Utils {
 			SUBFOLDER = format.format(calender.getTime()) + "/";
 		}
 		return SUBFOLDER;
+	}
+	
+	public static String formatDateToString(Date date, String pattern) {
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		return simpleDateFormat.format(date);
 	}
 }

@@ -32,6 +32,11 @@ public class BaseFileParser {
 		this.mDataName = dataName;
 	}
 
+	/**
+	 * 解析txt文件数据
+	 * @return
+	 * @author Josh
+	 */
 	@SuppressWarnings("resource")
 	public boolean doParse() {
 		logger.info("开始解析"+mDataName+"数据。");
@@ -106,7 +111,7 @@ public class BaseFileParser {
 	 * @param itemList  字符串 通过 String.split 分割成都 list
 	 * @param index 需要获取的元素在第几项
 	 * @return
-	 * @author zhanggn
+	 * @author Josh
 	 */
 	protected String getItemByIndex(List<String> itemList, int index) {
 		if (itemList == null || itemList.size() <= index) {

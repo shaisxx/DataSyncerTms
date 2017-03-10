@@ -48,7 +48,11 @@ public abstract class DbBase {
 		this.rs = rs;
 	}
 
-	// 封装数据库底层操作
+	/**
+	 * 封装数据库底层操作
+	 * @throws SQLException
+	 * @author Josh
+	 */
 	public void initConn() throws SQLException {
 		Connection conn = null;
 		try {   

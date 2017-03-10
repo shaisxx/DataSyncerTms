@@ -32,9 +32,9 @@ public class ConfigReader {
 	 * 没有配置,返回""
 	 * @param key
 	 * @return
+	 * @author Josh
 	 */
 	public String getValue(String key) {
 		return PROP.getProperty(key, "");
 	}
-	
 }

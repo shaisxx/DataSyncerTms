@@ -21,6 +21,10 @@ public class DbTableBack {
 		return backObj;
 	}
 
+	/**
+	 * 数据库表备份
+	 * @author Josh
+	 */
 	public void backup() {
 		String syncerTableNames = ConfigReader.getInstance().getValue("SYNCER_DB_BACKUP_TABLE_NAMES");
 		if(StringUtils.isNotBlank(syncerTableNames)){
@@ -41,9 +45,18 @@ public class DbTableBack {
 			String databaseName = ConfigReader.getInstance().getValue("MYSQL_DB_NAME");
 			backUpTables(dbTableNames, username, password, mysqlpaths, address, databaseName);
 		}
-
 	}
 	
+	/**
+	 * 执行数据库表备份
+	 * @param backupTableNames
+	 * @param dbUser
+	 * @param dbPassword
+	 * @param dbPaths
+	 * @param dbAddress
+	 * @param dbName
+	 * @author Josh
+	 */
 	private void backUpTables(String backupTableNames,String dbUser,String dbPassword,
 			String dbPaths,String dbAddress,String dbName){
 		

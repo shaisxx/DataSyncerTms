@@ -15,7 +15,7 @@ import org.apache.log4j.Logger;
 
 import com.shtd.datasyncer.utils.ConfigReader;
 import com.shtd.datasyncer.utils.Constant;
-import com.shtd.datasyncer.utils.db.MysqlDb;
+import com.shtd.datasyncer.utils.db.SyncerMysqlDb;
 
 public class DataGetter {
 
@@ -23,6 +23,7 @@ public class DataGetter {
 
 	private static String SUBFOLDER = "";
 
+	// 查询syncer_employee表数据
 	private static final String SELECT_DATA_SQL = "SELECT "
 			+ "user_no, username, email, mobile, gender, post_title, "
 			+ "department, post_type, staff_type, post_level, teach_flag, "
@@ -38,10 +39,6 @@ public class DataGetter {
 		initSubFolder();
 	}
 
-	/**
-	 * @param fileName
-	 *            保存的txt文件名
-	 */
 	public DataGetter(String fileName) {
 		initSubFolder();
 		this.mFileName = fileName;
@@ -51,9 +48,13 @@ public class DataGetter {
 		return mFilePathName;
 	}
 
-	// 查询数据表获取数据 并保存在本地
+	/**
+	 * 查询数据表获取数据 并保存在本地
+	 * @return
+	 * @author Josh
+	 */
 	public boolean pullData() {
-		MysqlDb db = new MysqlDb();
+		SyncerMysqlDb db = new SyncerMysqlDb();
 		Connection dbConn = null;
 		
 		try {
@@ -79,10 +80,8 @@ public class DataGetter {
 						flag = false;
 					}
 				}
-				logger.info("获取数据成功。");
 
 				mFilePathName = getFilePathName(mFileName);
-				logger.info("获取数据完毕");
 
 				if (writeToFile(mFilePathName, dataContentSb.toString())) {
 					logger.info("数据写入本地文件 " + mFilePathName + " 成功，数量：" + count);
@@ -109,7 +108,12 @@ public class DataGetter {
 		return false;
 	}
 
-	// 生成文件路径 ./data/yyyyMMddHHmmss/txtfile
+	/**
+	 * 生成文件路径 ./data/yyyyMMddHHmmss/txtfile
+	 * @param xmlFileName
+	 * @return
+	 * @author Josh
+	 */
 	private String getFilePathName(String xmlFileName) {
 		return ConfigReader.getInstance().getValue("DATA_FOLDER") + SUBFOLDER
 				+ xmlFileName;
@@ -117,10 +121,8 @@ public class DataGetter {
 
 	/**
 	 * 逐层创建文件夹
-	 * 
-	 * @param path
-	 *            文件路径
-	 * 
+	 * @param path 文件路径
+	 * @author Josh
 	 */
 	private boolean mkPathFolders(String filePath) {
 		String paths[] = filePath.split("/");
@@ -141,16 +143,25 @@ public class DataGetter {
 		return true;
 	}
 
+	/**
+	 * 根据当前时间生成目录
+	 * @author Josh
+	 */
 	private void initSubFolder() {
 		if (StringUtils.isBlank(SUBFOLDER)) {
 			Calendar calender = Calendar.getInstance();
 			SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-
 			SUBFOLDER = format.format(calender.getTime()) + "/";
 		}
 	}
 
-	// 将数据写入xml文件
+	/**
+	 * 将数据写入xml文件
+	 * @param filePathName
+	 * @param content
+	 * @return
+	 * @author Josh
+	 */
 	private boolean writeToFile(String filePathName, String content) {
 		if (StringUtils.isBlank(filePathName) || StringUtils.isBlank(content)) {
 			logger.error("数据写入本地文件，传入文件路径：" + filePathName + ", 待写入内容：" + content + ". 写入失败");
@@ -204,7 +215,16 @@ public class DataGetter {
 
 		return false;
 	}
-
+	
+	/**
+	 * 查询同步教职工数据
+	 * @param dbConn
+	 * @param dataContentSb
+	 * @param start
+	 * @param end
+	 * @return Integer 查询数量
+	 * @author Josh
+	 */
 	public Integer getDataContent(Connection dbConn, StringBuffer dataContentSb, int start, int end) {
 		Integer dataCount = 0;
 		try {
@@ -231,9 +251,7 @@ public class DataGetter {
 				dataContentSb.append(set.getString(14)).append(", \n");
 				dataCount++;
 			}
-
-//			dbConn.commit();// 事务提交
-//			dbConn.close();
+			
 		} catch (SQLException e) {
 			logger.error(e);
 		}

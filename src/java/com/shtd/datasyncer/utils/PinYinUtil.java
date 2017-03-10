@@ -10,9 +10,9 @@ public class PinYinUtil {
 
 	 /**
      * 得到 全拼
-     * 
      * @param src
      * @return
+     * @author Josh
      */
     public static String getPingYin(String src) {
         char[] t1 = null;
@@ -43,9 +43,9 @@ public class PinYinUtil {
 
     /**
      * 得到中文首字母
-     * 
      * @param str
      * @return
+     * @author Josh
      */
     public static String getPinYinHeadChar(String str) {
 
@@ -64,9 +64,9 @@ public class PinYinUtil {
 
     /**
      * 将字符串转移为ASCII码
-     * 
      * @param cnStr
      * @return
+     * @author Josh
      */
     public static String getCnASCII(String cnStr) {
         StringBuffer strBuf = new StringBuffer();
@@ -77,5 +77,4 @@ public class PinYinUtil {
         }
         return strBuf.toString();
     }
-
 }

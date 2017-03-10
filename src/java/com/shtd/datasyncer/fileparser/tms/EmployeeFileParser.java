@@ -31,9 +31,8 @@ public class EmployeeFileParser extends BaseFileParser {
 	}
 
 	/**
-	 * 数据格式
-	 * 职工号，姓名，性别
-	 * 100909,魏玉辉,男,
+	 * 解析txt每行数据
+	 * @author Josh
 	 */
 	protected boolean parseLine(String data) {
 		if (StringUtils.isBlank(data)) {

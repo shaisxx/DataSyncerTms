@@ -6,6 +6,10 @@ import com.shtd.datasyncer.utils.ConfigReader;
 import com.shtd.datasyncer.utils.Constant;
 import com.shtd.datasyncer.worker.IWorker;
 
+/**
+ * 数据同步主函数
+ * @author Josh
+ */
 public class Main {
 
 	/**

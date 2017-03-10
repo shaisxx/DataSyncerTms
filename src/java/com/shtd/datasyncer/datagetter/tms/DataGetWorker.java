@@ -1,12 +1,6 @@
 package com.shtd.datasyncer.datagetter.tms;
 
-import org.apache.log4j.Logger;
-
-import com.shtd.datasyncer.utils.Constant;
-
-
 public class DataGetWorker {
-	private static Logger logger = Logger.getLogger(Constant.LOGGER_NAME);
 
 	private static final String TEACHER_DATA_FILENAME = "employee_data.txt";
 

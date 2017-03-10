@@ -6,11 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.RestoreAction;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -19,8 +18,8 @@ import com.shtd.datasyncer.domain.tms.Employee;
 import com.shtd.datasyncer.utils.Constant;
 import com.shtd.datasyncer.utils.PinYinUtil;
 import com.shtd.datasyncer.utils.SendEmail;
+import com.shtd.datasyncer.utils.Utils;
 import com.shtd.datasyncer.utils.db.MysqlDb;
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 /**
  * 教职工数据保存
@@ -118,7 +117,7 @@ public class EmployeeDataSaver {
 															" SET username = (SELECT username FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)," + 
 															" email = (SELECT email FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)," +
 															" mobile = (SELECT mobile FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)";
-
+	
 	private static final String SQL_SELECT_CUR_EMPLOYEE = " SELECT " +
 														" ete.user_id, " +
 														" su.user_no, " +
@@ -176,7 +175,9 @@ public class EmployeeDataSaver {
 	}
 	
 	/**
+	 * 保存数据
 	 * @return
+	 * @author Josh
 	 */
 	public boolean doSave() {
 		if (mEmployeeList == null || mEmployeeList.size() <= 0) {
@@ -255,6 +256,13 @@ public class EmployeeDataSaver {
 		return false;
 	}
 	
+	/**
+	 * 获取教职工数据集合
+	 * @param conn
+	 * @param employeeList
+	 * @throws SQLException
+	 * @author Josh
+	 */
 	private void selectCurEmployeeList(Connection conn, List<Employee> employeeList) throws SQLException {
 		Statement stmt = conn.createStatement();
 		logger.info("开始查询教职工表edu_tch_employee数据");
@@ -285,6 +293,13 @@ public class EmployeeDataSaver {
 		logger.info("查询教职工表edu_tch_employee完毕");
 	}
 
+	/**
+	 * 获取临时表教职工数据集合
+	 * @param conn
+	 * @param employeeList
+	 * @throws SQLException
+	 * @author Josh
+	 */
 	private void selectTmpEmployeeList(Connection conn, List<Employee> employeeList) throws SQLException {
 		logger.info("开始查询临时表tmp_employee数据");
 		Statement stmt = conn.createStatement();
@@ -319,7 +334,12 @@ public class EmployeeDataSaver {
 		logger.info("查询临时表tmp_employee数据完毕");
 	}
 	
-	// 创建临时表 -- tmp_employee
+	/**
+	 * 创建临时表 -- tmp_employee
+	 * @param conn
+	 * @throws SQLException
+	 * @author Josh
+	 */
 	private void recreateTmpTable(Connection conn) throws SQLException {
 		dropTmpTable(conn);
 		logger.info("创建临时表 -- tmp_employee");
@@ -329,6 +349,12 @@ public class EmployeeDataSaver {
 		stmt.close();
 	}
 	
+	/**
+	 * 删除临时表tmp_employee
+	 * @param conn
+	 * @throws SQLException
+	 * @author Josh
+	 */
 	private void dropTmpTable(Connection conn) throws SQLException {
 		logger.info("删除临时表 tmp_employee");
 		Statement stmt = conn.createStatement();
@@ -337,7 +363,13 @@ public class EmployeeDataSaver {
 		stmt.close();
 	}
 	
-	// 将所有employee数据插入临时表
+	/**
+	 * 将所有employee数据插入临时表
+	 * @param conn
+	 * @param employeeList
+	 * @throws SQLException
+	 * @author Josh
+	 */
 	private void batchInsertTmpTable(Connection conn, List<Employee> employeeList) throws SQLException {
 		logger.info("开始批量将教职工数据插入临时表tmp_employee");
 		PreparedStatement prepStmt = conn.prepareStatement(SQL_INSERT_TMP_EMPLOYEE);
@@ -369,7 +401,12 @@ public class EmployeeDataSaver {
 	}
 	
 	
-	// 更新临时表tmp_employee
+	/**
+	 * 更新临时表tmp_employee
+	 * @param conn
+	 * @throws SQLException
+	 * @author Josh
+	 */
 	private void updateTmpEmployee(Connection conn) throws SQLException {
 		logger.info("开始批量更新临时表tmp_employee");
 		Statement stmt = conn.createStatement();
@@ -379,7 +416,13 @@ public class EmployeeDataSaver {
 		logger.info("批量更新临时表tmp_employee完毕");
 	}
 
-	// sys_user存在，但是在tmp_employee中不存在的教师帐号，置为‘逻辑删除’状态
+	/**
+	 * sys_user存在，但是在tmp_employee中不存在的教师帐号，置为‘逻辑删除’状态
+	 * @param conn
+	 * @throws SQLException
+	 * @author Josh
+	 */
+	@SuppressWarnings("unused")
 	private void updateEmployeeOnlyInSysUser(Connection conn) throws SQLException {
 		logger.info("sys_user存在，但是在tmp_employee中不存在的教师帐号，置为‘逻辑删除’状态");
 		Statement stmt = conn.createStatement();
@@ -390,7 +433,11 @@ public class EmployeeDataSaver {
 
 	/**
 	 * 根据tmp_employee中数据,更新sys_user信息
+	 * @param conn
+	 * @throws SQLException
+	 * @author Josh
 	 */
+	@SuppressWarnings("unused")
 	private void updateSysUser(Connection conn) throws SQLException {
 		logger.info("根据tmp_employee中数据,更新sys_user信息");
 		Statement stmt = conn.createStatement();
@@ -401,7 +448,11 @@ public class EmployeeDataSaver {
 	
 	/**
 	 * 根据tmp_employee中数据,更新edu_tch_employee信息
+	 * @param conn
+	 * @throws SQLException
+	 * @author Josh
 	 */
+	@SuppressWarnings("unused")
 	private void updateEmployee(Connection conn) throws SQLException {
 		logger.info("根据tmp_employee中数据,更新edu_tch_employee信息");
 		Statement stmt = conn.createStatement();
@@ -411,6 +462,14 @@ public class EmployeeDataSaver {
 		stmt.close();
 	}
 
+	/**
+	 * 保存新增教职工
+	 * @param db
+	 * @param employeeList
+	 * @return
+	 * @throws SQLException
+	 * @author Josh
+	 */
 	private String insertNewEmployee(MysqlDb db, List<Employee> employeeList) throws SQLException {
 		StringBuffer mailMsgSb = new StringBuffer();
 		StringBuffer logMsgSb = new StringBuffer();
@@ -458,8 +517,8 @@ public class EmployeeDataSaver {
     		        preparedStatement.setInt(14, 1);
     		        preparedStatement.executeUpdate();  
     		        
-    		        logMsgSb.append("\n [Add Employee] : " + employee.toString());
-    		        mailMsgSb.append("</br> [Add Employee] : " + employee.toString());
+    		        logMsgSb.append("\n" + Utils.formatDateToString(new Date(), "yyyy-MM-dd HH:mm:ss,SSS") + " [Add Employee] : " + employee.toString());
+    		        mailMsgSb.append("</br>" + Utils.formatDateToString(new Date(), "yyyy-MM-dd HH:mm:ss,SSS") + " [Add Employee] : " + employee.toString());
             	}
             	logger.info(logMsgSb.toString());
 	        }
@@ -470,7 +529,6 @@ public class EmployeeDataSaver {
 			if(dbConn != null){
 				dbConn.rollback();
 			}
-			
 		} 
 		logger.info("数据插入sys_user、edu_tch_employee完毕");
 		
@@ -520,8 +578,8 @@ public class EmployeeDataSaver {
 					if(curEmployee.getUserNo().equals(employee.getUserNo())){
 						String diffStr = diffEmployee(employee, curEmployee);
 						if(StringUtils.isNotBlank(diffStr)){
-							logMsgSb.append("\n [Update Employee] : [userNo=" + employee.getUserNo() + "," + diffStr + "]");
-							mailMsgSb.append("</br> [Update Employee] : [userNo=" + employee.getUserNo() + "," + diffStr + "]");
+							logMsgSb.append("\n" + Utils.formatDateToString(new Date(), "yyyy-MM-dd HH:mm:ss,SSS") + "  [Update Employee] : [userNo=" + employee.getUserNo() + "," + diffStr + "]");
+							mailMsgSb.append("</br>" + Utils.formatDateToString(new Date(), "yyyy-MM-dd HH:mm:ss,SSS") + "  [Update Employee] : [userNo=" + employee.getUserNo() + "," + diffStr + "]");
 						}
 					}
 				}

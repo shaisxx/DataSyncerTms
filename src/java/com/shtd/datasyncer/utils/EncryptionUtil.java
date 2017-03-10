@@ -9,15 +9,13 @@ package com.shtd.datasyncer.utils;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
 
 /**
- * @author Shen
- *
+ * @author Josh
  */
 public class EncryptionUtil {
     static PooledPBEStringEncryptor encryptor = null;
     static {
         encryptor = new PooledPBEStringEncryptor();
         encryptor.setPoolSize(4); 
-        //  There are various approaches to pull this configuration via system level properties. 
         encryptor.setPassword("s4h8t3d6");
         encryptor.setAlgorithm("PBEWITHMD5ANDDES");
     }

@@ -1,0 +1,20 @@
+
+同步教职工数据程序说明
+
+一、此程序用于教务系统同步教职工数据
+
+二、涉及三张表 ：教职工数据同步表（syncer_employee）、教职工表（edu_tch_employee）、用户表（sys_user）
+	注意：
+		1、教职工数据同步表（syncer_employee）与教职工表（edu_tch_employee）、用户表（sys_user）不属于同一个数据库，因此程序中配置文件有两处数据库配置
+		2、教职工数据同步表（syncer_employee）中数据是由学校老师提供的
+		3、需要将教职工数据同步表（syncer_employee）数据同步至教职工表（edu_tch_employee）、用户表（sys_user）
+		
+三、程序逻辑
+	1、首先分别备份：教职工数据同步表（syncer_employee）、教职工表（edu_tch_employee）、用户表（sys_user）数据至指定目录
+	2、获取教职工数据同步表（syncer_employee）所有数据，并将数据存入指定目录的txt文件中
+	3、解析txt文件中教职工数据，并将数据保存至数据库的临时表tmp_employee中
+	4、根据临时表中文去字典表查询并更新临时表
+	5、分别获取临时表tmp_employee数据集合tmpEmployeeList、教职工表（edu_tch_employee）数据集合employeeList
+	6、比较tmpEmployeeList和employeeList数据，将只在tmpEmployeeList存在的数据插入用户表（sys_user）、教职工表（edu_tch_employee），并将添加的教职工信息发送邮件
+	7、比较tmpEmployeeList和employeeList数据，根据教职工号判断教职工的其他信息是否有变动，并将有变动的信息发送邮件，这里并不更新教职工表（edu_tch_employee）、用户表（sys_user）两张表的数据
+	8、最有删除临时表tmp_employee
