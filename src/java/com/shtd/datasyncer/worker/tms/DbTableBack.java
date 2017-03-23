@@ -96,12 +96,12 @@ public class DbTableBack {
 				sb.append(tableName);
 				Runtime cmd = Runtime.getRuntime();
 				Process p = cmd.exec(sb.toString());
-				p.waitFor(); // 该语句用于标记，如果备份没有完成，则该线程持续等待
+				p.waitFor();
 				logger.info(tableName + " 备份完毕，将数据写入：" + dbSqlPathName + ".sql");
 			} catch (Exception e) {
 				logger.error("备份操作出现问题", e);
 			} finally {
-				backUpTableList.remove(tableName); // 最终都将解除
+				backUpTableList.remove(tableName);
 			}
 		}
 	}

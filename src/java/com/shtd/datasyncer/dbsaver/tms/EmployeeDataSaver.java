@@ -54,7 +54,7 @@ public class EmployeeDataSaver {
 														  "`cert_flag` int(2) NOT NULL default '0' COMMENT '是否具备教师资格  否，是'," +
 														  "`status` int(2) NOT NULL default '1' COMMENT '状态  不可用，可用'," +
 														  "PRIMARY KEY  (`id`)" +
-														") ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8 COMMENT='教职工数据临时表'";
+														") ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='教职工数据临时表';";
 	 
 	// 批量插入 tmp_employee  
 	private static final String SQL_INSERT_TMP_EMPLOYEE = "INSERT INTO tmp_employee"
@@ -62,14 +62,14 @@ public class EmployeeDataSaver {
 														+ "gender,post_title,department,post_type,"
 														+ "staff_type,post_level,teach_flag,retire_flag,"
 														+ "cert_flag,status) "
-														+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+														+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 	
 	private static final String SQL_UPDATE_TMP_EMPLOYEE = "UPDATE tmp_employee " +
-														"SET user_id = (SELECT id FROM sys_user WHERE user_no = tmp_employee.user_no LIMIT 1)," + 
-															"department_id = (SELECT id FROM dict_edu_common_department WHERE title = tmp_employee.department LIMIT 1)," +
-															"post_type_id = (SELECT id FROM dict_edu_tch_post_type WHERE title = tmp_employee.post_type LIMIT 1)," +
-															"staff_type_id = (SELECT id FROM dict_edu_tch_staff_type WHERE title = tmp_employee.staff_type LIMIT 1)," +
-															"post_level_id = (SELECT id FROM dict_edu_tch_post_level WHERE title = tmp_employee.post_level LIMIT 1)";
+														" SET user_id = (SELECT id FROM sys_user WHERE user_no = tmp_employee.user_no LIMIT 1)," + 
+															" department_id = (SELECT id FROM dict_edu_common_department WHERE title = tmp_employee.department LIMIT 1)," +
+															" post_type_id = (SELECT id FROM dict_edu_tch_post_type WHERE title = tmp_employee.post_type LIMIT 1)," +
+															" staff_type_id = (SELECT id FROM dict_edu_tch_staff_type WHERE title = tmp_employee.staff_type LIMIT 1)," +
+															" post_level_id = (SELECT id FROM dict_edu_tch_post_level WHERE title = tmp_employee.post_level LIMIT 1);";
 	
 	private static final String SQL_SELECT_TMP_EMPLOYEE = " SELECT " +
 															" te.user_id, " +
@@ -92,7 +92,7 @@ public class EmployeeDataSaver {
 															" te.cert_flag, " +
 															" te.`status` " +
 															" FROM " +
-															" tmp_employee te";
+															" tmp_employee te;";
 
 	// 只在sys_user存在，但是在tmp_employee中不存在的教师帐号，置为‘逻辑删除’状态
 	private static final String SQL_UPDATE_ONLY_IN_SYS_USER = " UPDATE sys_user SET logic_delete = 1 WHERE id IN ( " +
@@ -104,19 +104,19 @@ public class EmployeeDataSaver {
 																		" AND su.`status` = 1 " +
 																		" AND su.logic_delete = 0 " +
 																		" AND ete.`status` = 1 " +
-																		" AND ete.logic_delete = 0) u) ";
+																		" AND ete.logic_delete = 0) u); ";
 	
 	// 根据tmp_employee中数据,更新sys_user信息
 	private static final String SQL_UPDATE_SYS_USER_FROM_TMP = " UPDATE sys_user " + 
 															" SET username = (SELECT username FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)," + 
 															" email = (SELECT email FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)," +
-															" mobile = (SELECT mobile FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)";
+															" mobile = (SELECT mobile FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1);";
 
 	// 根据tmp_employee中数据,更新edu_tch_employee信息
 	private static final String SQL_UPDATE_EMPLOYEE_FROM_TMP = " UPDATE edu_tch_employee " + 
 															" SET username = (SELECT username FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)," + 
 															" email = (SELECT email FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)," +
-															" mobile = (SELECT mobile FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1)";
+															" mobile = (SELECT mobile FROM tmp_employee WHERE user_id = sys_user.id LIMIT 1);";
 	
 	private static final String SQL_SELECT_CUR_EMPLOYEE = " SELECT " +
 														" ete.user_id, " +
@@ -140,11 +140,11 @@ public class EmployeeDataSaver {
 														" LEFT JOIN dict_edu_common_department decd ON decd.id = ete.department_id " +
 														" LEFT JOIN dict_edu_tch_post_type detpt ON detpt.id = ete.post_type_id " +
 														" LEFT JOIN dict_edu_tch_staff_type detst ON detst.id = ete.staff_type_id " +
-														" LEFT JOIN dict_edu_tch_post_level detpl ON detpl.id = ete.post_level_id ";
+														" LEFT JOIN dict_edu_tch_post_level detpl ON detpl.id = ete.post_level_id ;";
 	
 
 	// 将只在tmp_employee中存在的数据全部插入 sys_user
-	private static final String SQL_INSERT_SYS_USER = "INSERT INTO sys_user(user_no,username,email,mobile) VALUE(?,?,?,?)";
+	private static final String SQL_INSERT_SYS_USER = "INSERT INTO sys_user(user_no,username,email,mobile) VALUE(?,?,?,?);";
 	
 	// 将只在tmp_employee中存在的数据全部插入 edu_tch_employee
 	private static final String SQL_INSERT_EDU_TCH_EMPLOYEE = " INSERT INTO edu_tch_employee ( " +
@@ -166,7 +166,7 @@ public class EmployeeDataSaver {
 																" modify_date " +
 																" ) " +
 																" VALUE " +
-																" (?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),now())";
+																" (?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),now());";
 	
 	private List<Employee> mEmployeeList;
 	
@@ -389,7 +389,7 @@ public class EmployeeDataSaver {
 			prepStmt.setInt(13, employee.getCertFlag());
 			prepStmt.setInt(14, employee.getStatus());
 
-			logger.info(prepStmt.toString() + ";" + employee.toString());
+			logger.info(prepStmt.toString());
 			
 			// 把一个SQL命令加入命令列表  
 			prepStmt.addBatch();
@@ -399,7 +399,6 @@ public class EmployeeDataSaver {
 		prepStmt.close();
 		logger.info("批量插入教职工数据完毕");
 	}
-	
 	
 	/**
 	 * 更新临时表tmp_employee
@@ -526,7 +525,7 @@ public class EmployeeDataSaver {
 			dbConn.commit();
 		} catch (Exception e) {
 			logger.error("将教职工数据保存到数据库，操作失败，数据库回滚 : " + e);
-			SendEmail.Send("将教职工数据保存到数据库，操作失败，数据库回滚 : " + e);
+			SendEmail.Send(Utils.formatDateToString(new Date(), "yyyy-MM-dd HH:mm:ss,SSS") + " : " + "将教职工数据保存到数据库，操作失败，数据库回滚 : " + e);
 			if(dbConn != null){
 				dbConn.rollback();
 			}
